@@ -1,7 +1,12 @@
 /* eslint-disable react/prop-types */
 
 import { useDispatch } from 'react-redux'
+<<<<<<< HEAD
+import { addCollection } from '../redux/features/collectionSlice'
+import { toast, Zoom } from 'react-toastify'
+=======
 import { addCollection, addedToast } from '../redux/features/collectionSlice'
+>>>>>>> d52f16b2d67d4f1ce8208ddcbbe38e691ca6ded3
 
 const ResultCard = ({ item }) => {
 
@@ -9,8 +14,22 @@ const ResultCard = ({ item }) => {
 
     const addToCollection = (item) => {
         dispatch(addCollection(item))
+<<<<<<< HEAD
+        toast.success('Added to Collection ✅', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Zoom,
+        });
+=======
         dispatch(addedToast())
         
+>>>>>>> d52f16b2d67d4f1ce8208ddcbbe38e691ca6ded3
     }
 
     return (
