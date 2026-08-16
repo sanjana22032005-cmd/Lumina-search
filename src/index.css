@@ -1,9 +1,5 @@
 @import "tailwindcss";
-<<<<<<< HEAD
 @custom-variant dark (&:where(.dark, .dark *));
-=======
-
->>>>>>> d52f16b2d67d4f1ce8208ddcbbe38e691ca6ded3
 #bottom{
     background: linear-gradient(transparent,black);
 }

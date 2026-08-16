@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPhotos, fetchVideos, fetchGIF } from '../api/mediaApi';
@@ -145,28 +144,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-=======
-
-import { useSelector } from 'react-redux'
-import ResultGrid from '../components/ResultGrid'
-import SearchBar from '../components/SearchBar'
-import Tabs from '../components/Tabs'
-const HomePage = () => {
-
-    const { query } = useSelector((store) => store.search)
-
-
-
-
-    return (
-        <div>
-
-            <SearchBar />
-
-            {query != '' ? <div><Tabs /><ResultGrid /></div> : ''}
-        </div>
-    )
-}
-
-export default HomePage
->>>>>>> d52f16b2d67d4f1ce8208ddcbbe38e691ca6ded3

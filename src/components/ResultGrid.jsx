@@ -43,21 +43,12 @@ const ResultGrid = () => {
                 if (activeTab == 'gif') {
                     let response = await fetchGIF(query)
 
-<<<<<<< HEAD
                     data = response.data.map((item) => ({
                         id: item.id,
                         title: item.title || 'GIF',
                         type: 'gif',
                         thumbnail: item.images.fixed_height_small.url,
                         src: item.images.original.url,
-=======
-                    data = response.data.results.map((item) => ({
-                        id: item.id,
-                        title: item.title || 'GIF',
-                        type: 'gif',
-                        thumbnail: item.media_formats.tinygif.url,
-                        src: item.media_formats.gif.url,
->>>>>>> d52f16b2d67d4f1ce8208ddcbbe38e691ca6ded3
                         url:item.url
                     }))
 

@@ -1,12 +1,8 @@
 /* eslint-disable react/prop-types */
 
 import { useDispatch } from 'react-redux';
-<<<<<<< HEAD
 import { removeCollection } from '../redux/features/collectionSlice';
 import { toast, Zoom } from 'react-toastify';
-=======
-import { removeCollection, removeToast } from '../redux/features/collectionSlice';
->>>>>>> d52f16b2d67d4f1ce8208ddcbbe38e691ca6ded3
 
 const CollectionCard = ({item}) => {
 
@@ -14,7 +10,6 @@ const CollectionCard = ({item}) => {
 
     const removeFromCollection = (item)=>{
         dispatch(removeCollection(item.id))
-<<<<<<< HEAD
         toast.error('Removed from Collection', {
             position: "top-center",
             autoClose: 2000,
@@ -26,9 +21,6 @@ const CollectionCard = ({item}) => {
             theme: "dark",
             transition: Zoom,
         });
-=======
-        dispatch(removeToast())
->>>>>>> d52f16b2d67d4f1ce8208ddcbbe38e691ca6ded3
     }
     return (
         <div className='w-[18vw] relative h-80 bg-white rounded-xl overflow-hidden'>
