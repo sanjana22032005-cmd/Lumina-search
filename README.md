@@ -2,6 +2,8 @@
 
 A modern, **Pinterest-inspired visual discovery platform** built with **React + Vite + Redux Toolkit**. Lumina Search allows users to endlessly explore **Photos, Videos, and GIFs** from multiple APIs, curate personal boards, and deep-dive into media with a rich, premium aesthetic.
 
+**🌟 Live Demo:** [https://lumina-search.vercel.app/](https://lumina-search.vercel.app/)
+
 ---
 
 ## ✨ Features
