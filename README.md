@@ -1,83 +1,87 @@
-# Media Search Application
+# Lumina Search
 
-A modern **React + Redux Toolkit** web application that enables users to search for **Photos, Videos, and GIFs** from multiple media APIs. Users can save their favorite media to a personal collection, manage saved items, and enjoy a clean, responsive interface.
-
----
-
-## Features
-
-- Search media using keywords
-- Browse Photos
-- Browse Videos
-- Browse GIFs
-- Save media to a personal collection
-- Remove individual items from the collection
-- Clear the entire collection
-- Collection persistence using Local Storage
-- Toast notifications for save and remove actions
-- Responsive UI built with Tailwind CSS
+A modern, **Pinterest-inspired visual discovery platform** built with **React + Vite + Redux Toolkit**. Lumina Search allows users to endlessly explore **Photos, Videos, and GIFs** from multiple APIs, curate personal boards, and deep-dive into media with a rich, premium aesthetic.
 
 ---
 
-## Tech Stack
+## ✨ Features
 
-- React.js
-- Vite
-- Redux Toolkit
-- React Redux
-- React Router DOM
-- Axios
-- React Toastify
-- Tailwind CSS
-- JavaScript (ES6+)
+- **Pinterest-Style Masonry Grid**: Endless, aesthetic browsing of responsive media cards.
+- **Unified Media Search**: Seamlessly search across Photos (Unsplash), Videos (Pexels), and GIFs (Giphy).
+- **Infinite Discovery**: "More Like This" endless feeds generated automatically based on media keywords.
+- **Custom Boards**: Create, rename, and manage multiple boards to categorize your saved media.
+- **Dedicated Media Detail Pages**: Share, Download, Like, and Save media in a focused, deep-linked view.
+- **Interactive UI**: Hover states, micro-animations, glassmorphism, and responsive design (Tailwind CSS).
+- **Persistent State**: Redux Toolkit integrated with Local Storage to keep your likes and boards across sessions.
+- **Dark/Light Mode Ready**: Automatic theme adaptation based on system preferences.
 
 ---
 
-## Project Structure
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js, Vite
+- **State Management**: Redux Toolkit, React Redux
+- **Routing**: React Router DOM
+- **Data Fetching**: Axios
+- **Styling**: Tailwind CSS
+- **Notifications**: React Toastify
+- **APIs**: Unsplash (Photos), Pexels (Videos), Giphy (GIFs)
+
+---
+
+## 📁 Project Structure
 
 ```text
 src
 │
 ├── api
-│   └── mediaApi.js
+│   └── mediaApi.js               # API configurations and fetch logic
 │
 ├── components
-│   ├── Navbar.jsx
-│   ├── SearchBar.jsx
-│   ├── Tabs.jsx
-│   ├── ResultGrid.jsx
-│   ├── ResultCard.jsx
-│   └── CollectionCard.jsx
+│   ├── CategoryNav.jsx           # Tab and category navigation
+│   ├── InfiniteScrollObserver.jsx# Logic for endless scrolling
+│   ├── MasonryGrid.jsx           # Pinterest-style grid layout
+│   ├── Navbar.jsx                # Responsive top navigation
+│   ├── PinCard.jsx               # Individual media display card
+│   ├── RelatedMediaGrid.jsx      # 'More Like This' grid
+│   ├── SaveToBoardModal.jsx      # Board selection modal
+│   ├── SearchBar.jsx             # Global search input
+│   ├── SkeletonCard.jsx          # Loading placeholders
+│   └── Tabs.jsx                  # Media type switcher
 │
 ├── pages
-│   ├── HomePage.jsx
-│   └── CollectionPage.jsx
+│   ├── BoardDetailPage.jsx       # View and manage a specific board
+│   ├── BoardsPage.jsx            # List of all user boards
+│   ├── ExplorePage.jsx           # Discovery entrypoint
+│   ├── HomePage.jsx              # Main infinite feed
+│   └── MediaDetailPage.jsx       # Isolated view for a single media item
 │
 ├── redux
-│   ├── store.js
+│   ├── store.js                  # Redux store configuration
 │   └── features
-│       ├── searchSlice.js
-│       └── collectionSlice.js
+│       ├── boardSlice.js         # Board & saved media state
+│       ├── searchSlice.js        # Search queries and results state
+│       └── userSlice.js          # User interactions (e.g., Likes) state
 │
-├── App.jsx
-├── main.jsx
-└── index.css
+├── App.jsx                       # Application router
+├── main.jsx                      # React entrypoint
+└── index.css                     # Global styles & Tailwind directives
 ```
 
 ---
 
-## Installation
+## 🚀 Installation
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME.git
+git clone https://github.com/sanjana22032005-cmd/Media-Search-Application.git
 ```
 
 ### 2. Navigate to the project directory
 
 ```bash
-cd YOUR_REPOSITORY_NAME
+cd Media-Search-Application
 ```
 
 ### 3. Install dependencies
@@ -86,33 +90,21 @@ cd YOUR_REPOSITORY_NAME
 npm install
 ```
 
-### 4. Install required packages (if setting up manually)
-
-```bash
-npm install react-router-dom
-npm install @reduxjs/toolkit react-redux
-npm install axios
-npm install react-toastify
-npm install tailwindcss @tailwindcss/vite
-```
-
-> **Note:** If you cloned this repository, running `npm install` is sufficient because all required packages are already listed in `package.json`.
-
 ---
 
-## Environment Variables
+## 🔑 Environment Variables
 
 Create a `.env` file in the project root and add your API keys:
 
 ```env
-VITE_UNSPLASH_ACCESS_KEY=YOUR_UNSPLASH_API_KEY
-VITE_PEXELS_API_KEY=YOUR_PEXELS_API_KEY
-VITE_TENOR_API_KEY=YOUR_TENOR_API_KEY
+VITE_UNSPLASH_KEY=YOUR_UNSPLASH_API_KEY
+VITE_PEXELS_KEY=YOUR_PEXELS_API_KEY
+VITE_GIPHY_KEY=YOUR_GIPHY_API_KEY
 ```
 
 ---
 
-## Running the Application
+## 💻 Running the Application
 
 Start the development server:
 
@@ -120,64 +112,21 @@ Start the development server:
 npm run dev
 ```
 
-Open your browser and visit:
-
-```text
-http://localhost:5173
-```
+Open your browser and visit `http://localhost:5173`
 
 ---
 
-## Dependencies
-
-| Package | Purpose |
-|----------|---------|
-| React | Frontend library |
-| Vite | Build tool and development server |
-| React Router DOM | Client-side routing |
-| Redux Toolkit | Global state management |
-| React Redux | Connect React with Redux |
-| Axios | API requests |
-| React Toastify | Toast notifications |
-| Tailwind CSS | Styling |
-
----
-
-## What Users Can Do
-
-- Search for media using any keyword.
-- Switch between **Photos**, **Videos**, and **GIFs** using dedicated tabs.
-- View high-quality search results fetched from multiple APIs.
-- Open the original media source in a new browser tab.
-- Save favorite media items to a personal collection.
-- View all saved items on the Collection page.
-- Remove individual items from the collection.
-- Clear the entire saved collection with a single click.
-- Receive toast notifications for successful save and remove actions.
-- Continue accessing saved items after refreshing the page through Local Storage persistence.
-
----
-
-## APIs Used
-
-- Unsplash API – Photo Search
-- Pexels API – Video Search
-- Tenor API – GIF Search
-
----
-
-## Author
+## 👤 Author
 
 **Sanjana Kumari**
 
 Third-year B.Tech Computer Science and Engineering student at IIIT Guwahati with an interest in Full Stack Development, Data Structures & Algorithms, and building scalable web applications. Passionate about learning modern technologies and developing impactful software projects.
 
-GitHub: https://github.com/sanjana22032005-cmd
-LinkedIn: https://www.linkedin.com/in/sanjana-kumari-5585b4340/
-
+- **GitHub**: [sanjana22032005-cmd](https://github.com/sanjana22032005-cmd)
+- **LinkedIn**: [Sanjana Kumari](https://www.linkedin.com/in/sanjana-kumari-5585b4340/)
 
 ---
 
-## License
+## 📄 License
 
 This project is developed for educational and learning purposes.
